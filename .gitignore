@@ -1,8 +1,14 @@
 # Ignore generated project files
 node_modules
-build
+src
 *.log
 
 # IntelliJ files
 .idea
 *.iml
+.eslintignore
+.eslintrc
+gulpfile.js
+main.js
+package.json
+
