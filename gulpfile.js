@@ -13,7 +13,6 @@ var vinylSourceStream = require('vinyl-source-stream');
 var vinylBuffer = require('vinyl-buffer');
 var watchify = require('watchify');
 
-
 // Build javascript files with browserify, reactify and babelify
 function compile(watch) {
   var plugin = [];
@@ -21,7 +20,7 @@ function compile(watch) {
     plugin = [[watchify, {ignoreWatch: ['**/node_modules/**']}]]
   }
   var bundler = browserify({
-    entries: "./src/index.jsx",
+    entries: "./src/app/index.jsx",
     debug: true,
     cache: {},
     packageCache: {},
@@ -70,18 +69,36 @@ function sass() {
     .pipe(gulp.dest("build/"));
 }
 
+function img() {
+  return gulp.src([
+    'src/assets/img/*'])
+    .pipe(gulp.dest('build/img'))
+}
+
+//Copy all static files
+function materialLite() {
+  return gulp.src([
+    './node_modules/material-design-lite/material.min.js'])
+    .pipe(gulp.dest('build/'))
+}
+
 gulp.task('build', function () {
   sass();
+  materialLite();
+  img();
   compile();
 });
 gulp.task('watch', function () {
   sass();
+  materialLite();
+  img();
   gulp.watch('src/assets/sass/**/*.scss', sass);
   compile(true);
 });
 
 gulp.task('browsersync', function () {
   // Just want static server, no need for hot reload as of now
+  // Start browser process
   return browserSync({
     server: {
       baseDir: '.'
@@ -93,4 +110,5 @@ gulp.task('browsersync', function () {
 gulp.task('watchAndLaunch', gulp.parallel('watch', 'browsersync'));
 
 // default task
+
 gulp.task('default', gulp.series('watchAndLaunch'));

@@ -1,0 +1,134 @@
+.splash {
+  position: fixed;
+  width:100%;
+  height: 100%;
+  background-color: #9dd9f7;
+}
+.pony-eye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -170px;
+  height: 480px;
+  width: 340px;
+  background: #fff;
+  -moz-border-radius: 340px 340px 340px 340px / 480px 480px 480px 480px;
+  -webkit-border-radius: 340px 480px;
+  border-radius: 340px 340px 340px 340px / 480px 480px 480px 480px;
+  -moz-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+  overflow: hidden;
+}
+.pony-eye:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 480px;
+  width: 340px;
+  -moz-border-radius: 340px 340px 340px 340px / 480px 480px 480px 480px;
+  -webkit-border-radius: 340px 480px;
+  border-radius: 340px 340px 340px 340px / 480px 480px 480px 480px;
+  box-shadow: inset 4px 15px 0 1px #000;
+
+  animation: pupil 0.5s ;
+}
+
+@keyframes pupil {
+  0% {
+    box-shadow: inset 4px 475px 0 1px #000;
+  }
+}
+
+.pony-iris {
+  height: 430px;
+  width: 300px;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQxMGUyNiIvPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM0MTBlMjYiLz48c3RvcCBvZmZzZXQ9IjY1JSIgc3RvcC1jb2xvcj0iIzljMTg1YSIvPjxzdG9wIG9mZnNldD0iNjUlIiBzdG9wLWNvbG9yPSIjYzUxYzcxIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzUxYzcxIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #410e26), color-stop(0%, #410e26), color-stop(65%, #9c185a), color-stop(65%, #c51c71), color-stop(100%, #c51c71));
+  background-image: -moz-linear-gradient(#410e26, #410e26 0%, #9c185a 65%, #c51c71 65%, #c51c71);
+  background-image: -webkit-linear-gradient(#410e26, #410e26 0%, #9c185a 65%, #c51c71 65%, #c51c71);
+  background-image: linear-gradient(#410e26, #410e26 0%, #9c185a 65%, #c51c71 65%, #c51c71);
+  -moz-border-radius: 300px 300px 300px 300px / 430px 430px 430px 430px;
+  -webkit-border-radius: 300px 430px;
+  border-radius: 300px 300px 300px 300px / 430px 430px 430px 430px;
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -webkit-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  overflow: hidden;
+}
+.pony-iris:before {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 35px;
+  position: absolute;
+  bottom: 35%;
+  background: #d9559f;
+}
+.pony-iris:after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 25px;
+  position: absolute;
+  bottom: 30%;
+  background: #f7b9d4;
+  z-index: -1;
+}
+
+.pony-pupil {
+  height: 350px;
+  width: 230px;
+  background: black;
+  -moz-border-radius: 230px 230px 230px 230px / 350px 350px 350px 350px;
+  -webkit-border-radius: 230px 350px;
+  border-radius: 230px 230px 230px 230px / 350px 350px 350px 350px;
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -webkit-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  position: absolute;
+  bottom: 35px;
+  left: 25px;
+}
+.pony-pupil:before {
+  content: '';
+  display: block;
+  background: #fff;
+  height: 182px;
+  width: 122.5px;
+  -moz-border-radius: 122.5px 122.5px 122.5px 122.5px / 182px 182px 182px 182px;
+  -webkit-border-radius: 122.5px 182px;
+  border-radius: 122.5px 122.5px 122.5px 122.5px / 182px 182px 182px 182px;
+  -moz-transform: rotate(25deg);
+  -ms-transform: rotate(25deg);
+  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  position: absolute;
+  top: -20px;
+  left: -5px;
+}
+.pony-pupil:after {
+  content: '';
+  display: block;
+  width: 45px;
+  height: 57.5px;
+  background: #fff;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  -moz-border-radius: 45px 45px 45px 45px / 57.5px 57.5px 57.5px 57.5px;
+  -webkit-border-radius: 45px 57.5px;
+  border-radius: 45px 45px 45px 45px / 57.5px 57.5px 57.5px 57.5px;
+  -moz-transform: rotate(25deg);
+  -ms-transform: rotate(25deg);
+  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+}

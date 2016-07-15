@@ -1,8 +1,7 @@
 {
-  "name": "Task Hero",
   "version": "0.0.1",
   "description": "Simple todo application BUT for Heroes !",
-  "main": "index.jsx",
+  "main": "main.js",
   "author": "Quentin LEVASLOT",
   "license": "ISC",
   "repository": {
@@ -19,6 +18,10 @@
     "babelify": "^7.3.0",
     "browser-sync": "^2.12.8",
     "browserify": "^13.0.1",
+    "devtron": "^1.2.1",
+    "electron-connect": "^0.4.2",
+    "electron-packager": "^7.2.0",
+    "electron-prebuilt": "^1.2.6",
     "eslint": "^2.12.0",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.8.1",
@@ -43,6 +46,8 @@
   },
   "dependencies": {},
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "build": "gulp build",
+    "electron": "electron ."
   }
 }

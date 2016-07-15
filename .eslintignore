@@ -1,2 +1,3 @@
 # Gulpfile is fine as it is, upgrade to ES6 one day eventually
 gulpfile.js
+main.js

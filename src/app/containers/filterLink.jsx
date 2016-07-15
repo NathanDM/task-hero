@@ -10,12 +10,15 @@ class Link extends React.Component {
   }
 
   render() {
+    let style = 'mdl-layout__tab';
+    const anchor = ['#scroll-tab-', this.props.filter].join('');
     if (this.props.active) {
-      return <span>{this.props.children}</span>;
+      style += ' is-active';
     }
     return (
       <a
-        href="#"
+        className={style}
+        href={anchor}
         onClick={e => {
           e.preventDefault();
           this.props.onClick();
@@ -30,7 +33,8 @@ class Link extends React.Component {
 Link.propTypes = {
   active: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired
 };
 
 const mapStateToProps = (state, ownProps) => ({

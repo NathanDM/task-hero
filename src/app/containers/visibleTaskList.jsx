@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { toggleTask } from '../actions';
-import TaskList from './taskList.jsx';
+import TaskList from '../components/visibleList/taskList.jsx';
 
 const getVisibleTasks = (todos, filter) => {
   switch (filter) {
@@ -16,7 +16,8 @@ const getVisibleTasks = (todos, filter) => {
 };
 
 const mapStateToProps = (state) => ({
-  tasks: getVisibleTasks(state.tasks, state.visibilityFilter)
+  tasks: getVisibleTasks(state.tasks, state.visibilityFilter),
+  filter: state.visibilityFilter
 });
 
 const mapDispatchToProps = (dispatch) => ({

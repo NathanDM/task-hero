@@ -1,25 +1,19 @@
 @import 'variables';
+@import 'splash';
 @import "material-design-lite/src/material-design-lite";
 
 body {
   font-family: 'Roboto', sans-serif;
-  margin: 0px;
-  background-color: #fafafa;
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+.mdl-layout__drawer-button {
+  display: none;
 }
 
 .title {
-  color: white;
-  font-size: 56px;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-.subtitle {
-  color: white;
-  font-size: 34px;
-  font-weight: 400;
-  line-height: 40px;
-  margin-bottom: 30px;
+  color: unquote("rgb(#{$color-accent})");
 }
 
 .input {
@@ -29,80 +23,210 @@ body {
   margin: 20px auto;
 }
 
-.topbar {
-  padding: 5px;
-  height: 50px;
-}
-
-.welcome {
-  padding: 5px;
-  background-color: unquote("rgb(#{$color-primary})");
-  text-align: center;
-  color: white;
-
-}
-
 .welcome-add-task {
-  color: white !important;
-  .mdl-textfield__label:after {
-    background-color: white;
-  }
-  button {
-
-  }
   .welcome-add-task-input {
-    margin: 0px 10px;
+    margin: 0 10px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0 0 0;
   }
 }
 
-.content-cards {
+.mdl-list {
+  padding: 0 0 !important;
+  margin: 0 !important;
+}
+
+.demo-list-control {
+  width: 100%
+}
+
+.demo-list-control li {
+  border-bottom: 1px solid unquote("rgb(#{$color-primary})");
+}
+
+.demo-list-three {
+  background-color: unquote("rgb(#{$color-primary})");;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+}
+
+$bounce-color: unquote("rgb(#{$color-accent})");
+
+.avatars {
+  background: url('./img/DS - My Little Pony Pinkie Pies Party - Pinkie Pie.png') no-repeat -4px -4px;
+  height: 58px;
+  width: 58px;
+  border-radius: 25%;
+  float: left;
+  margin: 0 20px 0 5px;
+  display: block;
+  box-shadow: 0 0 0 4px $bounce-color;
+
+  &:hover {
+    cursor: pointer;
+    animation: wink .4s linear;
+    animation-timing-function: step-start;
+  }
+}
+
+.animation {
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 }
 
-.card {
-  background-color: white;
-  width: 300px;
-  height: 120px;
-  margin: 20px;
-  border-radius: 2px;
-  .card-title {
-    color: white;
-    padding: 5px;
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-  }
+.dance {
+  width: 94px;
+  height: 130px;
+  background: url('./img/DS - My Little Pony Pinkie Pies Party - Pinkie Pie.png') no-repeat;
+  animation: dance 1s infinite;
+  animation-timing-function: step-start;
+  background-position-y: -1048px;
+}
 
-  .card-title[data-status="todo"] {
-    background-color: $color-card-todo;
-  }
-  .card-title[data-status="done"] {
-    background-color: $color-card-done;
-  }
-  .card-title[data-status="missed"] {
-    background-color: $color-card-missed;
-  }
-  .card-title[data-status="dismissed"] {
-    background-color: $color-card-dismissed;
-  }
+.dance-two {
+  width: 91px;
+  height: 130px;
+  background: url('./img/DS - My Little Pony Pinkie Pies Party - Pinkie Pie.png') no-repeat;
+  animation: dance-two 1s infinite;
+  animation-timing-function: step-start;
+  background-position-y: -1436px;
+}
 
-  .card-button {
-    margin: 20px calc(33% - 28px);
+@keyframes wink {
+  0% {
+    background-position-x: -4px;
+    box-shadow: 0 0 0 4px $bounce-color;
+    opacity: 1;
   }
-  .card-done-button {
-    background-color: $color-card-done;
-    margin-right: calc(17% - 28px);
-  }
+  12.5% {
+    background-position-x: -73px;
+    box-shadow: 0 0 0 2.5px $bounce-color;
+    opacity: 1;
 
-  .card-dismiss-button {
-    background-color: $color-card-dismissed;
-    margin-left: calc(17% - 28px);
   }
+  25% {
+    background-position-x: -142px;
+    box-shadow: 0 0 0 1px $bounce-color;
+    opacity: 1;
+  }
+  37.5% {
+    background-position-x: -216px;
+    box-shadow: 0 0 0 4px $bounce-color;
+    opacity: 1;
+  }
+  50% {
+    background-position-x: -285px;
+    box-shadow: 0 0 0 7px $bounce-color;
+    opacity: 1;
+  }
+  63.5% {
+    box-shadow: 0 0 0 5.5px $bounce-color;
+    opacity: 1;
+    background-position-x: -216px;
+  }
+  75% {
+    background-position-x: -142px;
+    box-shadow: 0 0 0 4px $bounce-color;
+    opacity: 1;
 
-  .card-due-date {
-    padding: 5px;
-    float: right;
+  }
+  82.5% {
+    background-position-x: -73px;
+  }
+  1000% {
+    background-position-x: -4px;
+    box-shadow: 0 0 0 5px $bounce-color;
+    opacity: 1;
+
   }
 }
 
+@keyframes bounceOut {
+  0% {
+
+  }
+  25% {
+    box-shadow: 0 0 0 1px $bounce-color;
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 7px $bounce-color;
+    opacity: 1;
+  }
+  75% {
+    box-shadow: 0 0 0 4px $bounce-color;
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 0 0 0 5px $bounce-color;
+    opacity: 1;
+  }
+}
+
+@keyframes dance {
+  0% {
+    background-position-x: 0px;
+  }
+  14.28% {
+    background-position-x: -94px;
+  }
+  28.57% {
+    background-position-x: -192px;
+  }
+  42.85% {
+    background-position-x: -286px;
+  }
+  57.13% {
+    background-position-x: -378px;
+  }
+  71.41% {
+    background-position-x: -472px;
+  }
+  85.69% {
+    background-position-x: -569px;
+  }
+  100% {
+    background-position-x: -667px;
+  }
+}
+
+@keyframes dance-two {
+  0% {
+    background-position-x: 0px;
+  }
+  14.28% {
+    background-position-x: -87px;
+  }
+  28.57% {
+    background-position-x: -174px;
+  }
+  42.85% {
+    background-position-x: -271px;
+  }
+  57.13% {
+    background-position-x: -360px;
+  }
+  71.41% {
+    background-position-x: -448px;
+  }
+  85.69% {
+    background-position-x: -538px;
+  }
+  100% {
+    background-position-x: -632px;
+  }
+}

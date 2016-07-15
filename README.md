@@ -32,9 +32,15 @@ service workers
 npm install
 ```
 
-### Launch the App with Watcher (js, sass)
+### Launch the web application with Watcher (js, sass)
 
 ```sh
 npm start
+```
+
+### Launch the desktop application with Watcher (js, sass)
+
+```sh
+npm run-script electron
 ```
 

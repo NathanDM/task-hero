@@ -19,17 +19,27 @@ const task = (state, action) => {
   }
 };
 
-const tasks = (state = [], action) => {
+
+const localTasks = localStorage.getItem('tasks');
+const initialState = localTasks ? JSON.parse(localTasks) : [];
+
+
+const tasks = (state = initialState, action) => {
+  let retval;
   switch (action.type) {
     case 'ADD_TASK':
-      return [
+      retval = [
         ...state,
         task(undefined, action)
       ];
+      localStorage.setItem('tasks', JSON.stringify(retval));
+      return retval;
     case 'TOGGLE_TASK':
-      return state.map(t =>
+      retval = state.map(t =>
         task(t, action)
       );
+      localStorage.setItem('tasks', JSON.stringify(retval));
+      return retval;
     default:
       return state;
   }
